@@ -8,6 +8,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  base: '/NiggNotes/',
+
   server: {
     port: 5173,
     strictPort: true,

@@ -39,5 +39,17 @@ Follow these steps to deploy your localized project to the cloud.
 - Visit your Vercel URL.
 - Test a PDF conversion to ensure the frontend is communicating with your Render backend.
 
+## 5. Alternative: Deploy to GitHub Pages
+If you prefer GitHub Pages over Vercel:
+1. Ensure `frontend/vite.config.js` has `base: '/NiggNotes/'` (Replace `NiggNotes` with your repo name).
+2. Run config commands:
+   ```bash
+   cd frontend
+   npm install gh-pages --save-dev
+   npm run deploy
+   ```
+3. Your site will be live at `https://<your-username>.github.io/NiggNotes/`.
+
 ---
 *Created by NiggNote Deployment Assistant*
+
