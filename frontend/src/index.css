@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000102;
+  --card: #040507;
+  --accent: #93acff;
+  --accent-soft: rgba(147, 172, 255, 0.08);
+  --text-main: #f8fafc;
+  --text-dim: #64748b;
+  --glass-20: rgba(255, 255, 255, 0.02);
+  --glass-40: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.06);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+@theme {
+  --color-accent: #93acff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Tactile Grain Overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Typography Utilities */
+.tracking-tight-custom {
+  letter-spacing: -0.05em;
+}
+
+.tracking-wide-custom {
+  letter-spacing: 0.15em;
+}
+
+/* Custom Animations */
+@keyframes letter-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px);
+  }
+}
+
+.animate-letter-reveal {
+  display: inline-block;
+  animation: letter-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes breath {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(147, 172, 255, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(147, 172, 255, 0.15);
+  }
+}
+
+.animate-breath {
+  animation: breath 4s ease-in-out infinite;
+}
+
+/* Material Layers */
+.glass-layer-1 {
+  background: var(--glass-20);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+}
+
+.glass-layer-2 {
+  background: var(--glass-40);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(40px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
