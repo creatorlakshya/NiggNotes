@@ -29,10 +29,11 @@ Follow these steps to deploy your localized project to the cloud.
 2. Connect your GitHub repository.
 3. Settings:
    - **Framework Preset**: `Vite`
-   - **Root Directory**: `frontend`
+   - **Root Directory**: `frontend` (IMPORTANT: You must click "Edit" next to Root Directory and select the `frontend` folder)
 4. **Environment Variables**:
    - Add `VITE_API_URL` with the value of your Render URL (from step 2), e.g., `https://niggnote-backend.onrender.com/convert`.
 5. Click **Deploy**.
+   > **Note**: If you see a 404 error on refresh, ensure the `vercel.json` file is present in the `frontend` folder.
 
 ## 4. Final Verification
 - Visit your Vercel URL.
